@@ -24,7 +24,10 @@
 
 ### Documentation
 
-- [Official Tech. specs. (Minitel1B)](http://pila.fr/content/interface_usb_minitel/specifications%20techniques%20d%27utilisation%20du%20minitel.pdf)
+- [Official Tech. specs. (Minitel1B)](http://pila.fr/content/interface_usb_minitel/specifications%20techniques%20d%27utilisation%20du%20minitel.pdf) [(pila)](https://pila.fr/)
+- [Official Magis Club](https://www.goto10.fr/minitel/notices/MinitelMagisClub.pdf) [(Goto10)](https://www.goto10.fr/)
+- [Official Minitel 2 Philips](https://www.goto10.fr/minitel/notices/minitel_2_philips.pdf) [(Goto10)](https://www.goto10.fr/)
+- [Official Minitel 5](https://www.goto10.fr/minitel/notices/minitel_5.pdf) [(Goto10)](https://www.goto10.fr/)
 - [hxc2001](https://github.com/jfdelnero/minitel): Hardware study of the Minitel
   in french. Also available [here](http://hxc2001.free.fr/minitel/)
 
@@ -76,14 +79,37 @@ Projects for Minitels with a serial port and ESP32 microcontroller.
 
 ### Emulators
 
-- [miedit (emulator section)](https://github.com/Zigazou/miedit/blob/master/EMULATOR.md)
+- [miedit (emulator
+  section)](https://github.com/Zigazou/miedit/blob/master/EMULATOR.md): A
+  Minitel emulator running in the browser
+- [i-TimTel
+  Flash](https://www.clubic.com/telecharger-fiche10827-i-timtel-flash.html): An
+  obsolete proprietary Minitel emulator made by [GOTO
+  Software](https://fr.wikipedia.org/wiki/GOTO_Software) running on Windows.
 
 ### Tools
 
-- [vdt2bpm](https://github.com/jfdelnero/minitel/tree/master/VDT2BMP): a small
+- [vdt2bpm](https://github.com/jfdelnero/minitel/tree/master/VDT2BMP): A small
   VDT to BPM file converter.
-- [vdt2wav](https://github.com/jfdelnero/minitel/tree/master/Minitel_VDT2WAV): a
+- [vdt2wav](https://github.com/jfdelnero/minitel/tree/master/Minitel_VDT2WAV): A
   small VDT to WAV file converter.
+- [arbomaker](http://pamal.org/minitel/arboMaker6.zip) [(PAMAL
+  Group)](http://wiki.pamal.org/wiki/LOGICIELS): A Processing project to create
+  minitel browsing tree structures.
+- [AviToVdt](https://pamal.org/minitel/aviToVdt.zip) [(PAMAL
+  Group)](http://wiki.pamal.org/wiki/LOGICIELS): A Processing project to
+  convert movie files to `.vdt` for minitel display, running at 1 image per
+  24s.
+- [JpgToVdt](https://pamal.org/minitel/JpgToVdt.zip) [(PAMAL
+  Group)](http://wiki.pamal.org/wiki/LOGICIELS): A Processing project to
+  convert image files to `.vdt` for minitel display.
+- [VdtAnalyser](http://pamal.org/minitel/VdtAnalyser.zip) [(PAMAL
+  Group)](http://wiki.pamal.org/wiki/LOGICIELS): A Processing project to
+  analyse the content of a `.vdt` file and identify how a page has been
+  written.
+- [ImgToVdt](https://anto80.com/fr-fr/traitement-image/convertir-image-au-format-minitel-vdt-imgtovdt):
+  A Windows proprietary CLI conversion tool made by Anto80. (Non free)
+
 
 ## Resources
 
@@ -96,21 +122,25 @@ Projects for Minitels with a serial port and ESP32 microcontroller.
   An impressive demo using minitel. Videos are available on Youtube
   [here](https://www.youtube.com/watch?v=a2HD6OzNoEo) and
   [there](https://www.youtube.com/watch?v=ba_51zGY1cQ).
-
+- [Minitel.us](https://minitel.us/): Minitel research lab (US)
+- [PAMAL Group](https://pamal.org/): Media archeology and preservation lab
+  working a lot with Minitel hardware. (FR)
+- [Pinky Story](http://troude.com/Pinky/): The story of a Telematic server
+  running between 1986 and 1992 (FR)
 
 ## Open Minitel services
 
 - [3611.re](http://3611.re/): 09.7227.3671
-- [3615co.de](http://3615.co.de): 09.7227.3675
+- [3615co.de](http://3615co.de): 09.7227.3675
 - [3614 HACKER](http://www.3614hacker.fr): 09.7252.7252
 - [3614 TEASER](http://www.3614teaser.fr:8080/)
 - [3615 SM](https://sm.3615.live/)
 - [JELORA](https://www.jelora.fr/post/2017/08/27/Serveur-Minitel.html): 09.7262.9267
 - [COMPUTEL](https://www.computel.fr/): 01.8421.8116
 - [JCA](https://forum.museeminitel.fr/t/computel-et-jca-de-retour/350): 01.8421.8115
-- [HYTREL](): 03.5925.1034
+- [HYTREL](#): 03.5925.1034
 - [IUT Auxerre](https://serveur-minitel-2019-3615-iut-auxerre.webnode.fr/tester-le-serveur/): 03.5843.5150
-- [Cosmos 6502](): 01.8421.8124 (intermittent)
+- [Cosmos 6502](#): 01.8421.8124 (intermittent)
 
 ## Contribute
 
