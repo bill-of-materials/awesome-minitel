@@ -2,20 +2,38 @@
 
 > A curated list of Minitel and Telematic resources
 
+![Minitel Glitchs](/minitel.png)
 
 ## Contents
 
 - [Hardware](#hardware)
+  - [Documentation](#documentation)
+  - [DIY serial interface](#diy-serial-interface)
 - [Software](#software)
+  - [Client side](#client-side)
+    - [ESP32](#esp32)
+  - [Server side](#server-side)
+  - [Editors](#editors)
+  - [Emulators](#emulators)
+  - [Tools](#tools)
 - [Resources](#resources)
 - [Open Minitel Services](#open-minitel-services)
 
 
 ## Hardware
 
-About this section. Optional. Keep this short and focus on the list.
+### Documentation
+
+- [Official Tech. specs. (Minitel1B)](http://pila.fr/content/interface_usb_minitel/specifications%20techniques%20d%27utilisation%20du%20minitel.pdf)
+- [hxc2001](https://github.com/jfdelnero/minitel): Hardware study of the Minitel
+  in french. Also available [here](http://hxc2001.free.fr/minitel/)
+
+### DIY Serial interface
+
+Different ways of using the Péri-informatique Serial socket of the Minitel.
 
 - [ESP32](https://hackaday.io/project/180473-minitel-esp32)
+- [Custom cable](https://www.jelora.fr/post/2020/02/25/Adaptateur-prise-DIN-peri-informatique-Minitel-vers-Serie-RS232-et-Serie-USB.html)
 
 
 ## Software
@@ -24,33 +42,28 @@ About this section. Optional. Keep this short and focus on the list.
 
 #### ESP32
 
+Projects for Minitels with a serial port and ESP32 microcontroller.
+
 - [Minitel-ESP32](https://github.com/iodeo/Minitel-ESP32): Sample codes for
-  Minitel apps development using ESP32 microcontroller (arduino or micropython).
-
+  Minitel apps development using ESP32 (arduino or micropython).
 - [Socketel](https://github.com/iodeo/Socketel): A portal to minitel webservices
-  written in micropython for ESP32 microcontroller.
-
+  written in micropython for ESP32.
 - [Minitel1B_Hard](https://github.com/eserandour/Minitel1B_Hard): Minitel
   Library for Arduino (with HardwareSerial).
-
 - [3615 SSH](https://github.com/jbellue/3615_SSH): An SSH client for ESP32.
 
 
 ### Server side
 
 - [minitel-server](https://github.com/BwanaFr/minitel-server): A small TCP based
-  minitel server written in Python
-
+  minitel server written in Python.
 - [PyMinitel](https://github.com/Zigazou/PyMinitel): A python library to control
   a minitel from a computer running Linux.
-
 - [pyNitel](https://github.com/cquest/pynitel): A python library to write Minitel
   servers/software. Contains two example services, a minitel directory and 3615
   ULLA simulation.
-
 - [cristel](https://github.com/cquest/cristel): Apple II minitel server (1986)
   using [Merlin / BIGMAC assembler](https://en.wikipedia.org/wiki/Merlin_(assembler)).
-
 - [dragster](https://github.com/cquest/dragster): Obsolete minitel server (1985)
   using MPW (Macintosh Programmer's Workshop).
 
@@ -69,7 +82,6 @@ About this section. Optional. Keep this short and focus on the list.
 
 - [vdt2bpm](https://github.com/jfdelnero/minitel/tree/master/VDT2BMP): a small
   VDT to BPM file converter.
-
 - [vdt2wav](https://github.com/jfdelnero/minitel/tree/master/Minitel_VDT2WAV): a
   small VDT to WAV file converter.
 
@@ -77,15 +89,9 @@ About this section. Optional. Keep this short and focus on the list.
 
 - [Musée du Minitel](https://www.museeminitel.fr/): The Minitel Museum. A lot of
   resources about Minitel and data preservation.
-
 - [Reviving Minitel Presentation](https://github.com/Zigazou/reviving-minitel):
   Sources of the “Reviving Minitel” presentation given at FOSDEM 2020 (Belgium).
-
 - [goto10](https://www.goto10.fr/): BBS and Minitel archives.
-
-- [hxc2001](https://github.com/jfdelnero/minitel): Hardware study of the Minitel
-  in french. Also available [here](http://hxc2001.free.fr/minitel/)
-
 - [hxc2001/the_minitel_demo](https://github.com/jfdelnero/minitel/tree/master/minitel2/the_minitel_demo):
   An impressive demo using minitel. Videos are available on Youtube
   [here](https://www.youtube.com/watch?v=a2HD6OzNoEo) and
