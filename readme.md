@@ -140,6 +140,11 @@ Projects for Minitels with a serial port and ESP32 microcontroller.
   revive a Minitel today. A mirror for their study is available
   [here](https://docplayer.fr/184023214-3615-iut-auxerre-projet-rt-1-ere-annee-rapport-bonnet-maxime-branlard-alexandre-grimard-quentin-salamolard-baptiste.html)
   and [there](https://1fb8adcd25.cbaul-cdnwnd.com/eab614bfc800f69002de12023a32276a/200000014-592c45a26b/BONNET_BRANLARD_GRIMARD_SALAMOLARD_Rapport_ProjetTut_3615_IUT-Auxerre%20%282%29.pdf).
+- [Telematic
+  History](https://telecommunications.monsite-orange.fr/page-5a854449a7560.html):
+  The complete history of Telematic with a lot of details and beautiful archive
+  photographies. (FR)
+
 
 ## Open Minitel services
 
