@@ -71,9 +71,9 @@ Projects for Minitels with a serial port and ESP32 microcontroller.
   minitel server written in Python.
 - [3615 IUT Auxerre
   Autoserver](https://serveur-minitel-2019-3615-iut-auxerre.webnode.fr/telechargements/)
-  A small python minitel server made by students in 2019 during an academic
-  project. In the eventuality the site goes down in the next years, the sources
-  are available
+  A small python Minitel server based on pyNitel and made by students in 2019
+  during an academic project. In the eventuality the site goes down in a future
+  time, the sources are available
   [here](https://drive.google.com/drive/folders/1wLk6xO69QS76uVHQZJHJCjxRyCORX_Op).
 
 
@@ -88,6 +88,9 @@ Projects for Minitels with a serial port and ESP32 microcontroller.
 - [miedit (emulator
   section)](https://github.com/Zigazou/miedit/blob/master/EMULATOR.md): A
   Minitel emulator running in the browser
+- [xtel](http://pficheux.free.fr/xtel/): A Linux/Unix based Minitel emulator
+  developed from 1985 to 2001. Ubuntu manpage available
+  [here](https://manpages.ubuntu.com/manpages/trusty/man1/xtel.1.html)
 - [i-TimTel
   Flash](https://www.clubic.com/telecharger-fiche10827-i-timtel-flash.html): An
   obsolete proprietary Minitel emulator made by [GOTO
