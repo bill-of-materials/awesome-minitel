@@ -58,8 +58,6 @@ Projects for Minitels with a serial port and ESP32 microcontroller.
 
 ### Server side
 
-- [minitel-server](https://github.com/BwanaFr/minitel-server): A small TCP based
-  minitel server written in Python.
 - [PyMinitel](https://github.com/Zigazou/PyMinitel): A python library to control
   a minitel from a computer running Linux.
 - [pyNitel](https://github.com/cquest/pynitel): A python library to write Minitel
@@ -69,6 +67,14 @@ Projects for Minitels with a serial port and ESP32 microcontroller.
   using [Merlin / BIGMAC assembler](https://en.wikipedia.org/wiki/Merlin_(assembler)).
 - [dragster](https://github.com/cquest/dragster): Obsolete minitel server (1985)
   using MPW (Macintosh Programmer's Workshop).
+- [minitel-server](https://github.com/BwanaFr/minitel-server): A small TCP based
+  minitel server written in Python.
+- [3615 IUT Auxerre
+  Autoserver](https://serveur-minitel-2019-3615-iut-auxerre.webnode.fr/telechargements/)
+  A small python minitel server made by students in 2019 during an academic
+  project. In the eventuality the site goes down in the next years, the sources
+  are available
+  [here](https://drive.google.com/drive/folders/1wLk6xO69QS76uVHQZJHJCjxRyCORX_Op).
 
 
 ### Editors
@@ -122,11 +128,18 @@ Projects for Minitels with a serial port and ESP32 microcontroller.
   An impressive demo using minitel. Videos are available on Youtube
   [here](https://www.youtube.com/watch?v=a2HD6OzNoEo) and
   [there](https://www.youtube.com/watch?v=ba_51zGY1cQ).
-- [Minitel.us](https://minitel.us/): Minitel research lab (US)
+- [Minitel.us](https://minitel.us/): Minitel research lab. (US)
 - [PAMAL Group](https://pamal.org/): Media archeology and preservation lab
   working a lot with Minitel hardware. (FR)
 - [Pinky Story](http://troude.com/Pinky/): The story of a Telematic server
-  running between 1986 and 1992 (FR)
+  running between 1986 and 1992. (FR)
+- [3615 IUT
+  Auxerre](https://serveur-minitel-2019-3615-iut-auxerre.webnode.fr/): An
+  academic Minitel revival project by young students from Auxerre, France in
+  2019-2020. Well documented, they follow the same path everyone has to walk to
+  revive a Minitel today. A mirror for their study is available
+  [here](https://docplayer.fr/184023214-3615-iut-auxerre-projet-rt-1-ere-annee-rapport-bonnet-maxime-branlard-alexandre-grimard-quentin-salamolard-baptiste.html)
+  and [there](https://1fb8adcd25.cbaul-cdnwnd.com/eab614bfc800f69002de12023a32276a/200000014-592c45a26b/BONNET_BRANLARD_GRIMARD_SALAMOLARD_Rapport_ProjetTut_3615_IUT-Auxerre%20%282%29.pdf).
 
 ## Open Minitel services
 
