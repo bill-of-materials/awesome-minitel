@@ -55,12 +55,15 @@ Projects for Minitels with a serial port and ESP32 microcontroller.
 - [Minitel1B_Hard](https://github.com/eserandour/Minitel1B_Hard) - Minitel Library for Arduino (with HardwareSerial).
 - [3615 SSH](https://github.com/jbellue/3615_SSH) - An SSH client for ESP32.
 
+#### Serial port
+
+- [websocket2minitel](https://github.com/cquest/websocket2minitel) - A middleware between a websocket based Minitel server and a connected through a serial port.
 
 ### Server side
 
-- [PyMinitel](https://github.com/Zigazou/PyMinitel) - A python library to control a Minitel from a computer running Linux using `/dev/ttyUSB*` serial interface.
-- [miplayer](https://github.com/Zigazou/miplayer) - A python program to continuously send VDT files to minitel using `/dev/ttyUSB*` serial interface(s).
-- [pyNitel](https://github.com/cquest/pynitel) - A python library to write Minitel servers/software communicating to Minitel through `/dev/ttyUSB*`. Contains two example services, a minitel directory and 3615 ULLA simulation.
+- [PyMinitel](https://github.com/Zigazou/PyMinitel) - A python library to control a Minitel from a computer running Linux using a serial interface.
+- [miplayer](https://github.com/Zigazou/miplayer) - A python program to continuously send VDT files to minitel using serial interface(s).
+- [pyNitel](https://github.com/cquest/pynitel) - A python library to write Minitel servers/software communicating to Minitel through a serial interface. Contains two example services, a minitel directory and 3615 ULLA simulation.
 - [minitel-server](https://github.com/BwanaFr/minitel-server) - A small TCP based Minitel server written in Python.
 - [PyMoIP](https://github.com/64rulez/PyMoIP) - A Minitel server using websockets in python. The project also contains other useful elements.
 - [HaMinitel](https://github.com/Zigazou/HaMinitel) - An Haskell Minitel server for Linux pushing content through `/dev/ttyUSB*` or a real RS-232 port connected to a modem.
