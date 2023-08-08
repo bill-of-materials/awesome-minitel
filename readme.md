@@ -80,7 +80,7 @@ to the Minitel is to use its serial port at the back (Minitel 1B), called the
 *Péri-informatique* port.
 
 ### DIY Serial interface
-
+/
 This section provides different ways of using the Péri-informatique Serial
 socket of the Minitel, which is able to receive characters / octets to display,
 and send keyboard inputs. This is the easiest way to use the Minitel today
@@ -234,16 +234,46 @@ projects may or may not be suitable for you.
 Most of the time, these projects are meant to work with Websockets, Telnet, SSH,
 or natively on a X.25 network.
 
-- [Zigazou/PyMinitel](https://github.com/Zigazou/PyMinitel) - A python library to control a Minitel from a computer running Linux using a serial interface.
-- [Zigazou/miplayer](https://github.com/Zigazou/miplayer) - A python program to continuously send VDT files to Minitel using serial interface(s).
-- [cquest/pyNitel](https://github.com/cquest/pynitel) - A python library to write Minitel servers/software communicating to Minitel through a serial interface. Contains two example services, a minitel directory and 3615 ULLA simulation.
-- [BwanaFr/minitel-server](https://github.com/BwanaFr/minitel-server) - A small TCP based Minitel server written in Python.
-- [64rulez/PyMoIP](https://github.com/64rulez/PyMoIP) - A Minitel server using websockets in python. The project also contains other useful elements.
-- [Zigazou/HaMinitel](https://github.com/Zigazou/HaMinitel) - An Haskell Minitel server for Linux pushing content through `/dev/ttyUSB*` or a real RS-232 port connected to a modem.
-- [3615 IUT Auxerre Autoserver](https://serveur-minitel-2019-3615-iut-auxerre.webnode.fr/telechargements/) - A python Minitel server based on pyNitel and made by students in 2019 during an academic project. In the eventuality the site goes down in a future time, the sources are available [here](https://drive.google.com/drive/folders/1wLk6xO69QS76uVHQZJHJCjxRyCORX_Op).
-- [Mushussu/Serveur-Minitel](https://github.com/Mushussu/Serveur-Minitel) - A Minitel test server written in C pushing content to `/dev/ttyUSB0`.
-- [cquest/cristel](https://github.com/cquest/cristel) - Apple II Minitel server (1986) using [Merlin / BIGMAC assembler](https://en.wikipedia.org/wiki/Merlin_(assembler)).
-- [cquest/dragster](https://github.com/cquest/dragster) - Obsolete Minitel server (1985) using MPW (Macintosh Programmer's Workshop).
+- [Zigazou/PyMinitel](https://github.com/Zigazou/PyMinitel) - A python library
+  to control a Minitel from a computer running Linux using a serial interface.
+
+- [jiktim/minitel.js](https://github.com/jiktim/minitel.js) - A
+  NodeJS server to send content to a Minitel through a websocket.
+
+- [Zigazou/miplayer](https://github.com/Zigazou/miplayer) - A python program to
+  continuously send VDT files to Minitel using serial interface(s).
+
+- [cquest/pyNitel](https://github.com/cquest/pynitel) - A python library to
+  write Minitel servers/software communicating to Minitel through a serial
+  interface. Contains two example services, a minitel directory and 3615 ULLA
+  simulation.
+
+- [BwanaFr/minitel-server](https://github.com/BwanaFr/minitel-server) - A small
+  TCP based Minitel server written in Python.
+
+- [64rulez/PyMoIP](https://github.com/64rulez/PyMoIP) - A Minitel server using
+  websockets in python. The project also contains other useful elements.
+
+- [Zigazou/HaMinitel](https://github.com/Zigazou/HaMinitel) - An Haskell Minitel
+  server for Linux pushing content through `/dev/ttyUSB*` or a real RS-232 port
+  connected to a modem.
+
+- [3615 IUT Auxerre
+  Autoserver](https://serveur-minitel-2019-3615-iut-auxerre.webnode.fr/telechargements/) -
+  A python Minitel server based on pyNitel and made by students in 2019 during
+  an academic project. In the eventuality the site goes down in a future time,
+  the sources are available
+  [here](https://drive.google.com/drive/folders/1wLk6xO69QS76uVHQZJHJCjxRyCORX_Op).
+
+- [Mushussu/Serveur-Minitel](https://github.com/Mushussu/Serveur-Minitel) - A
+  Minitel test server written in C pushing content to `/dev/ttyUSB0`.
+
+- [cquest/cristel](https://github.com/cquest/cristel) - Apple II Minitel server
+  (1986) using [Merlin / BIGMAC
+  assembler](https://en.wikipedia.org/wiki/Merlin_(assembler)).
+
+- [cquest/dragster](https://github.com/cquest/dragster) - Obsolete Minitel
+  server (1985) using MPW (Macintosh Programmer's Workshop).
 
 
 ### Editors
