@@ -49,7 +49,7 @@ require any physical modifications of the terminals. Extra hardware is required
 though.
 
 - [**Iodeo's Modified ESP32**](https://hackaday.io/project/180473-minitel-esp32) and
-  [specific instructions](https://hackaday.io/project/180473/instructions) - The
+  [specific instructions](https://hackaday.io/project/180473/instructions) 🩵 - The
   easiest way to use the serial port of a Minitel today. You don't require any
   soldering skill or custom cable, everything is included. This a modified ESP32
   build, including a serial port with the voltage modification to support
@@ -90,7 +90,7 @@ microcontroller. See the [hardware section (DIY)](#diy-serial-interface) for mor
 information about the required hardware (modified ESP32 or custom cable with
 native ESP32).
 
-- [**iodeo/Minitel-ESP32**](https://github.com/iodeo/Minitel-ESP32) - Iodeo's
+- [**iodeo/Minitel-ESP32**](https://github.com/iodeo/Minitel-ESP32) 🩵 - Iodeo's
   compilation of code samples for Minitel apps development using ESP32 (Arduino
   or micropython). This is a good start point if you want to use a modified
   ESP32. See also the associated [hackaday project
