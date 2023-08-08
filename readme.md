@@ -30,7 +30,8 @@ about.
   - [Physical Hardware modification](#physical-hardware-modification)
 - [Software](#software)
   - [Client side](#client-side)
-    - [Serial port with ESP32](#serial-port-with-esp32)
+    - [Firmware for ESP32 using Minitel serial
+      port](#firmware-for-esp32-using-minitel-serial-port)
     - [Serial port with adapter and
       computer](#serial-port-with-adapter-and-computer)
     - [Reprogramming](#reprogramming)
@@ -65,8 +66,8 @@ though.
   dedicated ESP32 devboard, including a serial port with the voltage
   modification required to support Minitel levels. The ESP32 is powered by the
   Minitel, which is *very* useful. See [software
-  section](#serial-port-with-esp32) for a list of software you can run client
-  side on the ESP32.
+  section](#firmware-for-esp32-using-minitel-serial-port) for a list of software
+  you can run client side on the ESP32.
 
 - [pi0tel](https://github.com/faxm0dem/pi0tel) - 3615 pi0, a Raspberry Pi pi0 or
   pi0-w uHat designed to be plugged on serial interface and self powered by the
@@ -76,6 +77,10 @@ though.
   USB)](https://www.jelora.fr/post/2020/02/25/Adaptateur-prise-DIN-peri-informatique-Minitel-vers-Serie-RS232-et-Serie-USB.html) - You
   can plug Minitels directly to a computer or a Raspberry Pi, thanks to a
   custom cable you can make with a few electronic components.
+
+- [Picotel's modification for Raspberry Pi
+  Pico](https://arduino103.blogspot.com/2022/04/minitel-branche-sur-mon-raspberry-pi.html) -
+  Lacking some information about the level shifter.
 
 ### Telephonic socket
 
@@ -94,20 +99,28 @@ Another approach could be to modify the terminals directly.
 
 ### Client side
 
-#### Serial port with ESP32
+By "client", we mean the software running on the Minitel side / next to the
+Minitel, able to serve content to the terminal and eventually fetch content from
+a remote server (see [server side](#server-side)). Depending on the additional
+[hardware](#hardware) you own or hardware modifications you performed, some
+clients may or may not be suitable.
+
+#### Firmware for ESP32 using Minitel serial port
 
 Projects for people using the serial port of their Minitel with an ESP32
-microcontroller. See the [hardware section (DIY)](#diy-serial-interface) for more
-information about the required hardware (modified ESP32 or custom cable with
-native ESP32).
+microcontroller. See the [hardware section (DIY)](#diy-serial-interface) for
+more information about the required hardware (ESP32 devboard or a custom cable
+with a bare ESP32).
 
 - [**iodeo/Minitel-ESP32**](https://github.com/iodeo/Minitel-ESP32) 🩵 - Iodeo's
   compilation of code samples for Minitel apps development using ESP32 (Arduino
   or micropython). This is a good start point if you want to use a modified
   ESP32. See also the associated [hackaday project
   page](https://hackaday.io/project/180473/instructions) for instructions.
-  **Telnet Pro** is highly recommended, and takes profit from SPIFFS which is a
-  small filesystem for Arduino (useful to persist your server list, SSID/WiFi
+  [**Telnet
+  Pro**](https://github.com/iodeo/Minitel-ESP32/tree/main/arduino/Minitel1B_Telnet_Pro)
+  is highly recommended, and takes profit from SPIFFS which is a small
+  filesystem for Arduino (useful to persist your server list, SSID/WiFi
   credentials...).
 - [iodeo/Socketel](https://github.com/iodeo/Socketel) - A portal to Minitel
   webservices written in micropython for ESP32. Services are externally hosted,
@@ -119,10 +132,18 @@ native ESP32).
 
 #### Serial port with adapter and computer.
 
-Projects for people using the serial port of their Minitel with a computer and
-a custom adapter.
+Projects for people using the serial port of their Minitel directly with a
+computer and a custom adapter, without additional microcontroller. For example:
+Raspberry Pi, etc.
 
-- [cquest/websocket2minitel](https://github.com/cquest/websocket2minitel) - A middleware between a websocket based Minitel server and a connected through a serial port.
+- [cquest/websocket2minitel](https://github.com/cquest/websocket2minitel) - A
+  middleware between a websocket based Minitel server and a connected through a
+  serial port.
+
+- [Picotel](https://github.com/mchobby/picotel) - A project by Dominique
+  Meurisse using a Raspberry Pi pico and custom adapters. See also [his
+  blog](https://arduino103.blogspot.com/2022/04/minitel-branche-sur-mon-raspberry-pi.html)
+  for more information. (FR/BE)
 
 #### Reprogramming
 
@@ -142,7 +163,14 @@ a custom adapter.
 
 ### Server side
 
-Could work with ESP32 or any serial port project.
+Minitel server implementations. The idea of these projects to serve content (VDT
+pages, text, other...) to clients (software running on a companion
+board/computer next to the Minitel, or on the Minitel directly). Depending on
+your client and the way the client is able to fetch content, some of these
+projects may or may not be suitable.
+
+Most of the time, these projects are meant to work with Websockets, Telnet, SSH,
+or natively on a X.25 network.
 
 - [Zigazou/PyMinitel](https://github.com/Zigazou/PyMinitel) - A python library to control a Minitel from a computer running Linux using a serial interface.
 - [Zigazou/miplayer](https://github.com/Zigazou/miplayer) - A python program to continuously send VDT files to Minitel using serial interface(s).
@@ -167,6 +195,7 @@ Could work with ESP32 or any serial port project.
 - [xtel](http://pficheux.free.fr/xtel/) - A Linux/Unix based Minitel emulator developed from 1985 to 2001 for X11. Ubuntu manpage is available [here](https://manpages.ubuntu.com/manpages/trusty/man1/xtel.1.html).
 - [i-TimTel Flash](https://www.clubic.com/telecharger-fiche10827-i-timtel-flash.html) - An obsolete proprietary Minitel emulator made by [GOTO Software](https://fr.wikipedia.org/wiki/GOTO_Software) running on Windows.
 
+
 ### Tools
 
 - [jfdelnero/vdt2bpm](https://github.com/jfdelnero/minitel/tree/master/VDT2BMP) - A small VDT to BPM file converter.
@@ -181,6 +210,7 @@ Could work with ESP32 or any serial port project.
 - [Zigazou/ebcdic2vdt/unitel2vdt](https://github.com/Zigazou/ebcdic2vdt) - A C and bash program to convert EBCDIC disk images to vdt files.
 - [Zigazou/teletext2minitel](https://github.com/Zigazou/teletext2minitel) - A simple standalone CLI PHP script which tries to convert Teletext/CEEFAX pages to Minitel pages.
 
+
 ## Resources
 
 ### Official documentation
@@ -191,18 +221,23 @@ Could work with ESP32 or any serial port project.
 - [Official Minitel 2 Philips](https://www.goto10.fr/minitel/notices/minitel_2_philips.pdf) [(Goto10)](https://www.goto10.fr/)
 - [Official Minitel 5](https://www.goto10.fr/minitel/notices/minitel_5.pdf) [(Goto10)](https://www.goto10.fr/)
 
+
 ### Extra studies and documentation
 
 - [**hxc2001**](https://github.com/jfdelnero/minitel) 🩵 - Hardware study of the
   Minitel in french. Also available [here](http://hxc2001.free.fr/minitel/).
   This content is referred multiple time in this repository and feels like a
   rabbit hole. (FR)
+- [Minitel
+  Datasheets](https://github.com/mchobby/picotel/raw/master/docs/minitel2_hack/minitel-datasheets.zip) -
+  All datasheets of Minitel parts, compiled by MCHobby.
 - [Matthieu Benoit's archives](http://matthieu.benoit.free.fr/minitel.htm) - A good
   amount of technical documents and archives about Minitel and telephony. The
   page also contains EPROM dumps from multiple Minitel models. (EN/FR)
 - [Minitel Printer
   Interface](http://matthieu.benoit.free.fr/pdf/minitel_printer_interface.pdf) -
   A scan from Hobbytronic N.36 (full mirror in better quality [here](https://archives.doctsf.com/documents/feuilleter_document.php?num_doc=74077&num_serie=219)), see page 13. (FR)
+
 
 ### Other resources
 
