@@ -4,33 +4,43 @@
 
 ![Minitel Glitchs](/minitel.png)
 
-This repository exists for Minitel enthusiasts who may want to give a second
+This repository is here for Minitel enthusiasts who might want to give a second
 life to their terminal. See [Wikipedia](https://en.wikipedia.org/wiki/Minitel)
-for general information about Minitel.
+for general information about Minitel terminal and network.
 
-The Minitel devices were made to work with a French dedicated network using X.25
-protocol, the Transpac Network. Its backbone has been shut in 2012 for cost and
-obsolescence reasons. Since then, Minitel terminals became pretty much useless:
-they were just display terminal with pretty much no compute and very limited
-RAM. But new usages are possible with some modifications brought to the
-hardware, or with the serial port at the back of some models.
+The Minitel devices were made to work with a French dedicated public network
+from the 80s implementing [X.25](https://en.wikipedia.org/wiki/X.25) protocol:
+the [Transpac](https://fr.wikipedia.org/wiki/Transpac) Network. This network was
+also used for various usages in professional industry, including for inter bank
+transfers and payments. With the beginning of Internet, the network became
+unneeded and obsolete. Its backbone was shut down in 2012, implying the death of
+the public Minitel network. Since then, Minitel terminals became pretty much
+useless: they were just display terminal with pretty much no compute and very
+limited RAM. Hopefully new usages are now possible, thanks to some modifications
+made to the original hardware, or with external hardware. Some terminals also
+have a serial port at their back that can be used to display characters on the
+screen and receive keystrokes from the user. This is what this repository is
+about.
 
 ## Contents
 
 - [Hardware](#hardware)
   - [DIY serial interface](#diy-serial-interface)
   - [Telephonic socket](#telephonic-socket)
+  - [Physical Hardware modification](#physical-hardware-modification)
 - [Software](#software)
   - [Client side](#client-side)
     - [Serial port with ESP32](#serial-port-with-esp32)
     - [Serial port with adapter and
       computer](#serial-port-with-adapter-and-computer)
+    - [Reprogramming](#reprogramming)
   - [Server side](#server-side)
   - [Editors](#editors)
   - [Emulators](#emulators)
   - [Tools](#tools)
 - [Resources](#resources)
-  - [Hardware documentation](#hardware-documentation)
+  - [Official documentation](#official-documentation)
+  - [Extra studies and documentation](#extra-studies-and-documentation)
   - [Other resources](#other-resources)
 - [Open Minitel Services](#open-minitel-services)
 
@@ -38,7 +48,7 @@ hardware, or with the serial port at the back of some models.
 
 This section is dedicated on the hardware you can connect to a Minitel (serial
 port or telephonic port / non-destructive) or the physical hardware
-modifications you can perform on the terminal.
+modifications (potentially destructive) you can perform on the terminal.
 
 ### DIY Serial interface
 
@@ -48,14 +58,15 @@ inputs. This is the easiest way to use the Minitel today, since it doesn't
 require any physical modifications of the terminals. Extra hardware is required
 though.
 
-- [**Iodeo's Modified ESP32**](https://hackaday.io/project/180473-minitel-esp32) and
-  [specific instructions](https://hackaday.io/project/180473/instructions) 🩵 - The
-  easiest way to use the serial port of a Minitel today. You don't require any
-  soldering skill or custom cable, everything is included. This a modified ESP32
-  build, including a serial port with the voltage modification to support
-  Minitel. The ESP32 is powered with the Minitel, which is *very* useful. See
-  [software section](#serial-port-with-esp32) for a list of software you can run
-  client side on the ESP32.
+- [**Iodeo's ESP32 devboard**](https://hackaday.io/project/180473-minitel-esp32)
+  and [specific instructions](https://hackaday.io/project/180473/instructions)
+  🩵 - The easiest way to use the serial port of a Minitel today. You don't
+  require any soldering skill or custom cable, everything is included. This a
+  dedicated ESP32 devboard, including a serial port with the voltage
+  modification required to support Minitel levels. The ESP32 is powered by the
+  Minitel, which is *very* useful. See [software
+  section](#serial-port-with-esp32) for a list of software you can run client
+  side on the ESP32.
 
 - [pi0tel](https://github.com/faxm0dem/pi0tel) - 3615 pi0, a Raspberry Pi pi0 or
   pi0-w uHat designed to be plugged on serial interface and self powered by the
@@ -70,7 +81,7 @@ though.
 
 WIP/TODO
 
-### Physical Hardware replacement
+### Physical Hardware modification
 
 Another approach could be to modify the terminals directly.
 
@@ -112,6 +123,22 @@ Projects for people using the serial port of their Minitel with a computer and
 a custom adapter.
 
 - [cquest/websocket2minitel](https://github.com/cquest/websocket2minitel) - A middleware between a websocket based Minitel server and a connected through a serial port.
+
+#### Reprogramming
+
+- [**Microprocessor
+  Reprogrammation**](https://github.com/jfdelnero/minitel#bon-et-apr%C3%A8s--que-peut-on-faire-avec-cela-)
+  🩵 - Someone with a decent level of determination found the way to upload
+  a custom firmware to the very limited Minitel microprocessor, in order to
+  display an impressive [demo](https://www.youtube.com/watch?v=a2HD6OzNoEo). You
+  can find the code of the demo here:
+  [the_minitel_demo](https://github.com/jfdelnero/minitel/tree/master/minitel2/the_minitel_demo).
+  You can also find a dump of the original EPROM with the stock firmware
+  [here](http://hxc2001.free.fr/minitel/Minitel_ROMs.zip). A presentation has
+  been made on the subject, slides can be found
+  [here](http://hxc2001.free.fr/minitel/Presentation_Etude_Minitel_2_FR_DE.pdf)
+  (FR/DE)
+
 
 ### Server side
 
@@ -156,30 +183,38 @@ Could work with ESP32 or any serial port project.
 
 ## Resources
 
-### Hardware documentation
-
-A lot of official or unofficial documentation and studies about the Minitel
-terminals.
+### Official documentation
 
 - [Official Tech. specs. (Minitel1B)](http://pila.fr/content/interface_usb_minitel/specifications%20techniques%20d%27utilisation%20du%20minitel.pdf) [(pila)](https://pila.fr/)
-- [Browsable Official Tech. specs. (Minitel1B)](https://jbellue.github.io/stum1b/) - A readable transcript of the official documentation, thanks jbellue! Contains an
+- [**Browsable Official Tech. specs. (Minitel1B)**](https://jbellue.github.io/stum1b/) 🩵 - A readable transcript of the official documentation, thanks jbellue!
 - [Official Magis Club](https://www.goto10.fr/minitel/notices/MinitelMagisClub.pdf) [(Goto10)](https://www.goto10.fr/)
 - [Official Minitel 2 Philips](https://www.goto10.fr/minitel/notices/minitel_2_philips.pdf) [(Goto10)](https://www.goto10.fr/)
 - [Official Minitel 5](https://www.goto10.fr/minitel/notices/minitel_5.pdf) [(Goto10)](https://www.goto10.fr/)
-- [hxc2001](https://github.com/jfdelnero/minitel) - Hardware study of the Minitel in french. Also available [here](http://hxc2001.free.fr/minitel/).
 
+### Extra studies and documentation
+
+- [**hxc2001**](https://github.com/jfdelnero/minitel) 🩵 - Hardware study of the
+  Minitel in french. Also available [here](http://hxc2001.free.fr/minitel/).
+  This content is referred multiple time in this repository and feels like a
+  rabbit hole. (FR)
+- [Matthieu Benoit's archives](http://matthieu.benoit.free.fr/minitel.htm) - A good
+  amount of technical documents and archives about Minitel and telephony. The
+  page also contains EPROM dumps from multiple Minitel models. (EN/FR)
+- [Minitel Printer
+  Interface](http://matthieu.benoit.free.fr/pdf/minitel_printer_interface.pdf) -
+  A scan from Hobbytronic N.36 (full mirror in better quality [here](https://archives.doctsf.com/documents/feuilleter_document.php?num_doc=74077&num_serie=219)), see page 13. (FR)
 
 ### Other resources
 
 - [Musée du Minitel](https://www.museeminitel.fr/) - The Minitel Museum. A lot of resources about Minitel and data preservation.
 - [Reviving Minitel Presentation](https://github.com/Zigazou/reviving-minitel) - Sources of the “Reviving Minitel” presentation given at FOSDEM 2020 (Belgium).
 - [goto10](https://www.goto10.fr/) - BBS and Minitel archives.
-- [hxc2001/the_minitel_demo](https://github.com/jfdelnero/minitel/tree/master/minitel2/the_minitel_demo): An impressive demo using minitel. Videos are available on Youtube [here](https://www.youtube.com/watch?v=a2HD6OzNoEo) and [there](https://www.youtube.com/watch?v=ba_51zGY1cQ).
 - [Minitel.us](https://minitel.us/) - Minitel research lab. (US)
 - [PAMAL Group](https://pamal.org/) - Media archeology and preservation lab working a lot with Minitel hardware. (FR)
 - [Pinky Story](http://troude.com/Pinky/) - The story of a Telematic server running between 1986 and 1992. (FR)
 - [3615 IUT Auxerre](https://serveur-minitel-2019-3615-iut-auxerre.webnode.fr/) - An academic Minitel revival project by young students from Auxerre, France in 2019-2020. Well documented, they follow the same path everyone has to walk to revive a Minitel today. A mirror for their study is available [here](https://docplayer.fr/184023214-3615-iut-auxerre-projet-rt-1-ere-annee-rapport-bonnet-maxime-branlard-alexandre-grimard-quentin-salamolard-baptiste.html) and [there](https://1fb8adcd25.cbaul-cdnwnd.com/eab614bfc800f69002de12023a32276a/200000014-592c45a26b/BONNET_BRANLARD_GRIMARD_SALAMOLARD_Rapport_ProjetTut_3615_IUT-Auxerre%20%282%29.pdf). (FR)
-- [Telematic History](https://telecommunications.monsite-orange.fr/page-5a854449a7560.html) - The complete history of Telematic with a lot of details and beautiful archive photographies. (FR)
+- [**Telematic History**](https://telecommunications.monsite-orange.fr/page-5a854449a7560.html) 🩵 - The complete history of Telematic with a lot of details and beautiful archive photographies. (FR)
+- [From Minitel to Internet](https://larevuedesmedias.ina.fr/du-minitel-linternet) - INA (FR)
 - [Transpac Network Shutdown](https://www.zdnet.fr/blogs/infra-net/x25-c-est-fini-39852412.htm) - In 2012, the French Minitel network has been shut down (FR)
 
 
