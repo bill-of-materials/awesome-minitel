@@ -17,10 +17,11 @@ unneeded and obsolete. Its backbone was shut down in 2012, implying the death of
 the public Minitel network. Since then, Minitel terminals became pretty much
 useless: they were just display terminal with pretty much no compute and very
 limited RAM. Hopefully new usages are now possible, thanks to some modifications
-made to the original hardware, or with external hardware. Some terminals also
-have a serial port at their back that can be used to display characters on the
-screen and receive keystrokes from the user. This is what this repository is
-about.
+made to the original hardware, or with external hardware used to provide content
+to the Minitel. Some terminals like Minitel1B have a serial port at their back
+that can be used to display characters on the screen and send keystrokes from
+the user to an external device. This is mainly what this repository is about.
+You will also find interesting archives and technical documentation.
 
 ## Contents
 
@@ -28,12 +29,13 @@ about.
   - [DIY serial interface](#diy-serial-interface)
   - [Telephonic socket](#telephonic-socket)
   - [Physical Hardware modification](#physical-hardware-modification)
+  - [Physical Hardware hacking](#physical-hardware-hacking)
 - [Software](#software)
   - [Client side](#client-side)
     - [Firmware for ESP32 using Minitel serial
       port](#firmware-for-esp32-using-minitel-serial-port)
-    - [Serial port with adapter and
-      computer](#serial-port-with-adapter-and-computer)
+    - [Clients for serial communication from
+      computer](#clients-for-serial-communication-from-computer)
     - [Reprogramming](#reprogramming)
   - [Server side](#server-side)
   - [Editors](#editors)
@@ -51,21 +53,46 @@ This section is dedicated on the hardware you can connect to a Minitel (serial
 port or telephonic port / non-destructive) or the physical hardware
 modifications (potentially destructive) you can perform on the terminal.
 
+You have multiple possible approaches:
+
+- Using the Minitel as a display terminal for a computer or a small embeded
+  computer like Raspberry Pi
+
+- Using the Minitel as a standalone device able to serve local content / VDT
+  pages locally hosted thanks to an ESP32 / Arduino board with local storage.
+
+- Using the Minitel as a standalone device able to connect remote content
+  providing servers through a classic network, using for example an ESP32 /
+  Arduino with a WiFi or Ethernet interface.
+
+- Using the Minitel in its original form, with external devices emulating the
+  X.25 Transpac network and providing content with its native protocol.
+
+- Hacking the Minitel as a standalone computer (despite huge hardware
+  limitations), rewriting the content of it's embedded microcontroller.
+
+- Using the Minitel as a display, just reusing the screen and replacing/throwing
+  away most internal components.
+
+In all those possible hardware modifications, the easiest way to provide content
+to the Minitel is to use it's serial port at the back (Minitel 1B), called the
+*Péri-informatique* port.
+
 ### DIY Serial interface
 
-Different ways of using the Péri-informatique Serial socket of the Minitel,
-which is able to receive characters / octets to display, and send keyboard
-inputs. This is the easiest way to use the Minitel today, since it doesn't
-require any physical modifications of the terminals. Extra hardware is required
-though.
+This section provides different ways of using the Péri-informatique Serial
+socket of the Minitel, which is able to receive characters / octets to display,
+and send keyboard inputs. This is the easiest way to use the Minitel today
+since it doesn't require any physical modifications of the terminals. Extra
+hardware is required to adapt the signal due to unusual voltage levels (>5V).
 
 - [**Iodeo's ESP32 devboard**](https://hackaday.io/project/180473-minitel-esp32)
   and [specific instructions](https://hackaday.io/project/180473/instructions)
   🩵 - The easiest way to use the serial port of a Minitel today. You don't
   require any soldering skill or custom cable, everything is included. This a
-  dedicated ESP32 devboard, including a serial port with the voltage
-  modification required to support Minitel levels. The ESP32 is powered by the
-  Minitel, which is *very* useful. See [software
+  dedicated ESP32 devboard, including a WiFi adapter and a serial port with the
+  voltage modification required to support Minitel levels. The ESP32 is powered
+  by the Minitel, which is *very* useful. See [software
   section](#firmware-for-esp32-using-minitel-serial-port) for a list of software
   you can run client side on the ESP32.
 
@@ -73,14 +100,20 @@ though.
   pi0-w uHat designed to be plugged on serial interface and self powered by the
   Minitel.
 
-- [Custom cables (Serial <> RS232 and Serial <>
-  USB)](https://www.jelora.fr/post/2020/02/25/Adaptateur-prise-DIN-peri-informatique-Minitel-vers-Serie-RS232-et-Serie-USB.html) - You
-  can plug Minitels directly to a computer or a Raspberry Pi, thanks to a
-  custom cable you can make with a few electronic components.
+- [Jelora's custom cables (Serial <> RS232 and Serial <>
+  USB)](https://www.jelora.fr/post/2020/02/25/Adaptateur-prise-DIN-peri-informatique-Minitel-vers-Serie-RS232-et-Serie-USB.html) -
+  You can plug Minitels 1B directly to a computer or a Raspberry Pi, thanks to a
+  custom cable you can make with a few electronic components. This one is a bit
+  more difficult to build than Pila's build below.
+
+- [**Pila's custom adapter**](https://pila.fr/wordpress/?p=361) 🩵 - An
+  alternative tutorial to create a custom Serial <> USB cable using a 2N2222A
+  transistor, some resistors and a PL2303HX UART <> USB converter (very easy to
+  build). (FR)
 
 - [Picotel's modification for Raspberry Pi
   Pico](https://arduino103.blogspot.com/2022/04/minitel-branche-sur-mon-raspberry-pi.html) -
-  Lacking some information about the level shifter.
+  An alternative setup, but lacking some information about the level shifter.
 
 ### Telephonic socket
 
@@ -95,22 +128,31 @@ Another approach could be to modify the terminals directly.
 - [cfp-radio](https://www.cfp-radio.com/realisations/rea48/minitel-01.html) -
   Converting a Minitel to a TV monitor / composite video monitor.
 
+### Physical Hardware hacking
+
+See the [dedicated software section](#reprogramming) below.
+
+
 ## Software
+
+Once you chose your hardware path, you can chose a way to provide content to
+the terminal. This section contains various client and server implementation
+that can help using your Minitel.
 
 ### Client side
 
-By "client", we mean the software running on the Minitel side / next to the
-Minitel, able to serve content to the terminal and eventually fetch content from
-a remote server (see [server side](#server-side)). Depending on the additional
-[hardware](#hardware) you own or hardware modifications you performed, some
-clients may or may not be suitable.
+By *client side*, we mean the software running on the Minitel side / next to the
+terminal, able to serve content, receive inputs and eventually fetch content
+from a remote server (see [server side](#server-side)). Depending on the
+additional [hardware](#hardware) you own or hardware modifications you
+performed, some clients may or may not be suitable for you.
 
 #### Firmware for ESP32 using Minitel serial port
 
-Projects for people using the serial port of their Minitel with an ESP32
-microcontroller. See the [hardware section (DIY)](#diy-serial-interface) for
-more information about the required hardware (ESP32 devboard or a custom cable
-with a bare ESP32).
+Those projects are dedicated to people using the serial port of their Minitel
+with an ESP32 microcontroller. See the [hardware section
+(DIY)](#diy-serial-interface) above for more information about the required
+hardware (ESP32 devboard or a custom cable with a bare ESP32).
 
 - [**iodeo/Minitel-ESP32**](https://github.com/iodeo/Minitel-ESP32) 🩵 - Iodeo's
   compilation of code samples for Minitel apps development using ESP32 (Arduino
@@ -122,23 +164,39 @@ with a bare ESP32).
   is highly recommended, and takes profit from SPIFFS which is a small
   filesystem for Arduino (useful to persist your server list, SSID/WiFi
   credentials...).
+
 - [iodeo/Socketel](https://github.com/iodeo/Socketel) - A portal to Minitel
   webservices written in micropython for ESP32. Services are externally hosted,
   see [server section](#server-side).
+
 - [eserandour/Minitel1B_Hard](https://github.com/eserandour/Minitel1B_Hard) -
   Minitel Library for Arduino (with HardwareSerial).
+
 - [jbellue/3615_SSH](https://github.com/jbellue/3615_SSH) - An SSH client for
   ESP32.
 
-#### Serial port with adapter and computer.
+#### Clients for serial communication from computer.
 
-Projects for people using the serial port of their Minitel directly with a
-computer and a custom adapter, without additional microcontroller. For example:
-Raspberry Pi, etc.
+Projects dedicated to people using the serial port of their Minitel directly
+from a computer with a custom adapter, without needing a standalone
+microcontroller. Useful if you can to control your Minitel from a Raspberry Pi,
+a computer, etc.
+
+- [Arduiblog, Bring Minitel back to life](https://arduiblog.com/2019/04/29/ressuscitez-le-minitel/) -
+  A small but efficient documentation on how to configure a Linux server to be
+  used with a Minitel terminal using the serial port. (FR)
+
+- [Mars Hack Lab article](https://mars-hack-lab.fr/?p=282) - Configure a Debian
+  stretch running on a Raspberry Pi Zero W to be used with a Minitel in terminal
+  mode. (FR)
+
+- [mntl.ti](http://canal.chez.com/mntl.ti) - Alexandre Montaron's terminfo file.
+  You will need this configuration file to provide the right inputs/character
+  codes to the Minitel if you plan to use a Minitel as a Linux terminal.
 
 - [cquest/websocket2minitel](https://github.com/cquest/websocket2minitel) - A
-  middleware between a websocket based Minitel server and a connected through a
-  serial port.
+  middleware between a websocket-based Minitel server and the Minitel serial
+  port. Written by Christian Quest. (EN)
 
 - [Picotel](https://github.com/mchobby/picotel) - A project by Dominique
   Meurisse using a Raspberry Pi pico and custom adapters. See also [his
@@ -163,11 +221,11 @@ Raspberry Pi, etc.
 
 ### Server side
 
-Minitel server implementations. The idea of these projects to serve content (VDT
-pages, text, other...) to clients (software running on a companion
-board/computer next to the Minitel, or on the Minitel directly). Depending on
+Minitel server implementations. The idea of these projects is to serve content
+(VDT pages, text, other...) to clients (software running on a companion
+board/computer next to the Minitel or on the Minitel directly). Depending on
 your client and the way the client is able to fetch content, some of these
-projects may or may not be suitable.
+projects may or may not be suitable for you.
 
 Most of the time, these projects are meant to work with Websockets, Telnet, SSH,
 or natively on a X.25 network.
@@ -186,7 +244,17 @@ or natively on a X.25 network.
 
 ### Editors
 
-- [Zigazou/miedit](https://github.com/Zigazou/miedit) - A browser based Minitel page editor using Canvas and ES6. [Online editor demo](https://minitel.cquest.org)
+Minitel pages used to be provided in the form of a tree structure of .VDT pages.
+VDT format was use to describe characters displayed on the screen and basic
+animations / the order in which the characters are displayed. You can see VDT
+files as some sort of ASCII/GIF file, but beware: the charset is quite different
+from classic ASCII. To produce VDT pages, editors exist, allowing you to find
+the available characters, hexadecimal correspondence for each symbol on screen,
+and write your animations.
+
+- [Zigazou/miedit](https://github.com/Zigazou/miedit) - A browser-based Minitel
+  page editor using Canvas and ES6. [Online editor
+  demo](https://minitel.cquest.org)
 
 
 ### Emulators
@@ -241,7 +309,10 @@ or natively on a X.25 network.
 
 ### Other resources
 
-- [Musée du Minitel](https://www.museeminitel.fr/) - The Minitel Museum. A lot of resources about Minitel and data preservation.
+- [**Musée du Minitel**](https://www.museeminitel.fr/) 🩵 - The Minitel Museum.
+  A lot of resources about Minitel and data preservation. Also contains an
+  amazing [**forum**](https://forum.museeminitel.fr/) 🩵 with an ethusiast
+  community and almost all resources you will need. (FR)
 - [Reviving Minitel Presentation](https://github.com/Zigazou/reviving-minitel) - Sources of the “Reviving Minitel” presentation given at FOSDEM 2020 (Belgium).
 - [goto10](https://www.goto10.fr/) - BBS and Minitel archives.
 - [Minitel.us](https://minitel.us/) - Minitel research lab. (US)
