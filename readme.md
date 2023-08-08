@@ -2,7 +2,7 @@
 
 > A curated list of Minitel and Telematic resources
 
-![Minitel Glitchs](/minitel.png)
+![Minitel Glitches](/minitel.png)
 
 This repository is here for Minitel enthusiasts who might want to give a second
 life to their terminal. See [Wikipedia](https://en.wikipedia.org/wiki/Minitel)
@@ -10,7 +10,7 @@ for general information about Minitel terminal and network.
 
 The Minitel devices were made to work with a French dedicated public network
 from the 80s implementing [X.25](https://en.wikipedia.org/wiki/X.25) protocol:
-the [Transpac](https://fr.wikipedia.org/wiki/Transpac) Network. This network was
+the [Transpac Network](https://fr.wikipedia.org/wiki/Transpac). This network was
 also used for various usages in professional industry, including for inter bank
 transfers and payments. With the beginning of Internet, the network became
 unneeded and obsolete. Its backbone was shut down in 2012, implying the death of
@@ -235,3 +235,11 @@ Could work with ESP32 or any serial port project.
 ## Contribute
 
 Contributions welcome! Read the [contribution guidelines](contributing.md) first.
+
+## License
+
+The [awesome-minitel](https://github.com/bill-of-materials/awesome-minitel)
+project is released under the CeCILL-B ([en](./Licence_CeCILL-B_V1-en.txt),
+[fr](./Licence_CeCILL-B_V1-fr.txt)) license.
+
+https://cecill.info/
