@@ -293,14 +293,26 @@ and write your animations.
 
 ### Emulators
 
-- [Zigazou/miedit (emulator section)](https://github.com/Zigazou/miedit/blob/master/EMULATOR.md) - A Minitel emulator running in the browser.
+- [Zigazou/miedit (emulator
+  section)](https://github.com/Zigazou/miedit/blob/master/EMULATOR.md) - A
+  Minitel emulator running in the browser.
+
 - [bill-of-materials/docker-miedit-emulator (container)](https://github.com/bill-of-materials/docker-miedit-emulator) -
   If you're lazy and just want to quickly run a miedit emulator to connect to a
   websocket server, you can use this almost pointless Docker container I'm
   maintaining.
 
-- [xtel](http://pficheux.free.fr/xtel/) - A Linux/Unix based Minitel emulator developed from 1985 to 2001 for X11. Ubuntu manpage is available [here](https://manpages.ubuntu.com/manpages/trusty/man1/xtel.1.html).
-- [i-TimTel Flash](https://www.clubic.com/telecharger-fiche10827-i-timtel-flash.html) - An obsolete proprietary Minitel emulator made by [GOTO Software](https://fr.wikipedia.org/wiki/GOTO_Software) running on Windows.
+- [AS-connect](http://wiz0u.free.fr/pulsar/asconnect/) - A Windows Minitel
+  emulator.
+
+- [xtel](http://pficheux.free.fr/xtel/) - A Linux/Unix based Minitel emulator
+  developed from 1985 to 2001 for X11. Ubuntu manpage is available
+  [here](https://manpages.ubuntu.com/manpages/trusty/man1/xtel.1.html).
+
+- [i-TimTel
+  Flash](https://www.clubic.com/telecharger-fiche10827-i-timtel-flash.html) - An
+  obsolete proprietary Minitel emulator made by [GOTO
+  Software](https://fr.wikipedia.org/wiki/GOTO_Software) running on Windows.
 
 
 ### Tools
