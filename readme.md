@@ -124,10 +124,13 @@ WIP/TODO
 
 Another approach could be to modify the terminals directly.
 
+- [High Tech Minitel](https://chapelierfou.org/blog/a-high-tech-minitel.html) -
+  A replacement of the Minitel 1B screen and creation of an Arduino based
+  generic USB keyboard controller. (EN)
 - [64rulez's Minitel2.0](https://github.com/64rulez/minitel2.0) - A replacement
-  of Minitel hardware with a Zynq board.
+  of Minitel hardware with a Zynq board. (EN)
 - [cfp-radio](https://www.cfp-radio.com/realisations/rea48/minitel-01.html) -
-  Converting a Minitel to a TV monitor / composite video monitor.
+  Converting a Minitel to a TV monitor / composite video monitor. (FR)
 
 ### Physical Hardware hacking
 
