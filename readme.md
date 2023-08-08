@@ -80,7 +80,7 @@ to the Minitel is to use its serial port at the back (Minitel 1B), called the
 *Péri-informatique* port.
 
 ### DIY Serial interface
-/
+
 This section provides different ways of using the Péri-informatique Serial
 socket of the Minitel, which is able to receive characters / octets to display,
 and send keyboard inputs. This is the easiest way to use the Minitel today
@@ -140,7 +140,7 @@ See the [dedicated software section](#reprogramming) below.
 ## Software
 
 Once you chose your hardware path, you can chose a way to provide content to
-the terminal. This section contains various client and server implementation
+the terminal. This section contains various client and server implementations
 that can help using your Minitel.
 
 ### Client side
@@ -227,12 +227,12 @@ a computer, etc.
 
 Minitel server implementations. The idea of these projects is to serve content
 (VDT pages, text, other...) to clients (software running on a companion
-board/computer next to the Minitel or on the Minitel directly). Depending on
-your client and the way the client is able to fetch content, some of these
-projects may or may not be suitable for you.
-
+board/computer next to the Minitel or on the Minitel directly).
 Most of the time, these projects are meant to work with Websockets, Telnet, SSH,
-or natively on a X.25 network.
+a directly serial connected terminal, or natively on a X.25 network.
+
+Depending on your architecture, client and the way the client is able to fetch
+content, some of these projects may or may not be suitable for you.
 
 - [Zigazou/PyMinitel](https://github.com/Zigazou/PyMinitel) - A python library
   to control a Minitel from a computer running Linux using a serial interface.
@@ -356,6 +356,10 @@ and write your animations.
 - [Minitel Printer
   Interface](http://matthieu.benoit.free.fr/pdf/minitel_printer_interface.pdf) -
   A scan from Hobbytronic N.36 (full mirror in better quality [here](https://archives.doctsf.com/documents/feuilleter_document.php?num_doc=74077&num_serie=219)), see page 13. (FR)
+- [Building around
+  Minitels](https://ia601600.us.archive.org/8/items/etsf-montages-autour-dun-minitel/ETSF%20-%20Montages%20autour%20d%27un%20Minitel.pdf) -
+  A book by Christian Tavernier. Seems to be impossible to buy anywhere, so here
+  is the scanned version of the book from archive.org. (FR)
 
 
 ### Other resources
@@ -373,6 +377,8 @@ and write your animations.
 - [**Telematic History**](https://telecommunications.monsite-orange.fr/page-5a854449a7560.html) 💙 - The complete history of Telematic with a lot of details and beautiful archive photographies. (FR)
 - [From Minitel to Internet](https://larevuedesmedias.ina.fr/du-minitel-linternet) - INA (FR)
 - [Transpac Network Shutdown](https://www.zdnet.fr/blogs/infra-net/x25-c-est-fini-39852412.htm) - In 2012, the French Minitel network has been shut down (FR)
+- [XReyRobert/VideotexPagesRepository](https://github.com/XReyRobert/VideotexPagesRepository) -
+  An archive of VDT pages with GIF conversion for modern browsing.
 
 
 ## Open Minitel services
