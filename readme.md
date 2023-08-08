@@ -4,24 +4,25 @@
 
 ![Minitel Glitches](/minitel.png)
 
-This repository is here for Minitel enthusiasts who might want to give a second
-life to their terminal. See [Wikipedia](https://en.wikipedia.org/wiki/Minitel)
-for general information about Minitel terminal and network.
+This repository stands here for Minitel enthusiasts who may want to give a
+second life to their terminal. See
+[Wikipedia](https://en.wikipedia.org/wiki/Minitel) for general information about
+Minitel terminal and network.
 
 The Minitel devices were made to work with a French dedicated public network
 from the 80s implementing [X.25](https://en.wikipedia.org/wiki/X.25) protocol:
 the [Transpac Network](https://fr.wikipedia.org/wiki/Transpac). This network was
-also used for various usages in professional industry, including for inter bank
-transfers and payments. With the emergence of Internet, this network became
-unneeded and obsolete. Its backbone was shut down in 2012, implying the death of
-the public Minitel network. Since then, Minitel terminals became pretty much
-useless: they were just display terminal with pretty much no compute and very
-limited RAM. Hopefully new usages are now possible, thanks to some modifications
-made to the original hardware, or with external hardware used to provide content
-to the Minitel. Some terminals like Minitel 1B have a serial port at their back
-that can be used to display characters on the screen and send keystrokes from
-the user to an external device. This is mainly what this repository is about.
-You will also find interesting archives and technical documentation.
+also used in professional industry, including for inter-bank transfers,
+payments... With the emergence of Internet, the network became unneeded and
+obsolete. Its backbone was shut down in 2012, implying the death of the public
+Minitel network. Since then, Minitel terminals became pretty much useless: they
+were just display terminal with pretty much no compute and very limited RAM.
+Hopefully new usages are now possible, thanks to some modifications made to the
+original hardware, or with external hardware used to provide content to the
+Minitel. Some terminals like Minitel 1B have a serial port at their back that
+can be used to display characters on the screen and send keystrokes from the
+user to an external device. This is mainly what this repository is about. You
+will also find interesting archives and technical documentation.
 
 ## Contents
 
