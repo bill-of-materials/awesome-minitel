@@ -394,8 +394,7 @@ and write your animations.
 - [HYTREL](#) - 03.5925.1034
 - [IUT Auxerre](https://serveur-minitel-2019-3615-iut-auxerre.webnode.fr/tester-le-serveur/) - 03.5843.5150
 - [Cosmos 6502](#) - 01.8421.8124 (intermittent)
-- [RetroCampus](http://bbs.retrocampus.com/) - bbs.retrocampus.com:1651
-  (Telstar/Videotex)
+- [RetroCampus](http://bbs.retrocampus.com/) - bbs.retrocampus.com:1651 (Telstar/Videotex) - Tel. 0039.0522.750051
 - [GlassTTY](https://glasstty.com/) - glasstty.com:6502 (Telstar/Videotex)
 
 ## Contribute
