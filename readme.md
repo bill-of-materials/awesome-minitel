@@ -275,6 +275,9 @@ content, some of these projects may or may not be suitable for you.
 - [cquest/dragster](https://github.com/cquest/dragster) - Obsolete Minitel
   server (1985) using MPW (Macintosh Programmer's Workshop).
 
+- [ludosevilla/minipaviCli](https://github.com/ludosevilla/minipaviCli) - A Minitel
+  server SDK allowing to build services around simple HTTP requests and PHP. 
+
 
 ### Editors
 
