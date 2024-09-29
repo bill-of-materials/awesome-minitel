@@ -118,7 +118,13 @@ hardware is required to adapt the signal due to unusual voltage levels (>5V).
 
 ### Telephonic socket
 
-WIP/TODO
+- [**vdt2bmp**](https://github.com/jfdelnero/minitel/tree/master/VDT2BMP) 💙 -
+  Emulate FSK payloads (that the native V.23 modem will be able to decode)
+  with a just a soundcard and a home made jack adapter with a resistor.
+  Can work with a smartphone. More information on
+  [hxc2001's website](http://hxc2001.free.fr/minitel/#modulation) and on
+  [museeminitel](https://forum.museeminitel.fr/t/nouvelle-interface-de-connexion-du-minitel-une-simple-carte-son/1393)
+  (FR)
 
 ### Physical Hardware modification
 
@@ -276,7 +282,7 @@ content, some of these projects may or may not be suitable for you.
   server (1985) using MPW (Macintosh Programmer's Workshop).
 
 - [ludosevilla/minipaviCli](https://github.com/ludosevilla/minipaviCli) - A Minitel
-  server SDK allowing to build services around simple HTTP requests and PHP. 
+  server SDK allowing to build services around simple HTTP requests and PHP.
 
 
 ### Editors
