@@ -406,6 +406,7 @@ and write your animations.
 - [Cosmos 6502](#) - 01.8421.8124 (intermittent)
 - [RetroCampus](http://bbs.retrocampus.com/) - bbs.retrocampus.com:1651 (Telstar/Videotex) - Tel. 0039.0522.750051
 - [GlassTTY](https://glasstty.com/) - glasstty.com:6502 (Telstar/Videotex)
+- [MiniPavi](https://www.minipavi.fr/) - 09.7210.1721
 
 ## Contribute
 
