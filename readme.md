@@ -282,8 +282,10 @@ content, some of these projects may or may not be suitable for you.
   server (1985) using MPW (Macintosh Programmer's Workshop).
 
 - [ludosevilla/minipaviCli](https://github.com/ludosevilla/minipaviCli) - A Minitel
-  server SDK allowing to build services around simple HTTP requests and PHP.
+  server SDK allowing to build services around simple HTTP requests and PHP, via a MiniPavi gateway.
 
+- [ludosevilla/minipavi](https://github.com/ludosevilla/minipavi) - MiniPavi gateway, accepting conections from websockets, telnet and RTC/VoIP V23 modems (ie Minitel), giving access to services developped with the minipaviCli SDK.
+  
 
 ### Editors
 
