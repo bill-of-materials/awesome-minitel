@@ -213,6 +213,11 @@ a computer, etc.
   blog](https://arduino103.blogspot.com/2022/04/minitel-branche-sur-mon-raspberry-pi.html)
   for more information. (FR/BE)
 
+- [Minitel Image Viewer](https://github.com/pR-0000/Minitel-image-viewer) - Python
+   app with a graphical interface that converts an image into the Minitel’s G1
+   mosaic character set and sends it to the terminal over serial (or exports the
+   result as a .vdt file)
+
 #### Reprogramming
 
 - [**Microprocessor
